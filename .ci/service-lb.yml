@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: svc-${APP_NAME}
+ namespace: ${APP_NAMESPACE}
+ labels:
+   app: ${APP_NAME}
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+  type: LoadBalancer
+  selector:
+    app: ${APP_NAME}

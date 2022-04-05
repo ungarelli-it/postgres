@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: ${APP_NAME}
+ namespace: ${APP_NAMESPACE}
+ labels:
+   app: ${APP_NAME}
+spec:
+ ports:
+   - port: 5432
+     targetPort: 5432
+     protocol: TCP
+     name: pgsql
+ selector:
+   app: ${APP_NAME}
