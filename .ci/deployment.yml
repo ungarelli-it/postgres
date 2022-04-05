@@ -29,8 +29,6 @@ spec:
         envFrom:
         - secretRef:
             name: ${APP_NAME}
-        - configMapRef:
-            name: ${APP_NAME}
         resources:
           requests:
             memory: "256Mi"
