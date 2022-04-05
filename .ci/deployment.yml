@@ -42,12 +42,12 @@ spec:
         - configMapRef:
             name: ${APP_NAME}
         resources:
-          limits:
-            memory: ${LIMITE_NODE_MEMORIA}
-            cpu: ${LIMITE_NODE_CPU}
           requests:
-            memory: ${REQ_NODE_MEMORIA}
-            cpu: ${REQ_NODE_CPU}
+            memory: "256Mi"
+            cpu: "50m"
+          limits:
+            memory: "512Mi"
+            cpu: "100m"
         volumeMounts:
           - name: ${APP_NAMESPACE}-${APP_NAME}
             mountPath: /var/lib/postgresql/data
