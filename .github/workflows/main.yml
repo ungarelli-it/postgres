@@ -68,7 +68,6 @@ jobs:
           envsubst < .ci/service.yml > .ci/k8s-4642-service.yml
           envsubst < .ci/service-lb.yml > .ci/k8s-4642-service-lb.yml
           envsubst < .ci/deployment.yml > .ci/k8s-4642-deployment.yml
-          envsubst < .ci/ingress.yml > .ci/k8s-4642-ingress.yml
           kubectl apply -f .ci/k8s-4642-claim.yml
           kubectl apply -f .ci/k8s-4642-secret.yml
           kubectl apply -f .ci/k8s-4642-service.yml
