@@ -2,11 +2,11 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: ${APP_NAME}
-  namespace: ${APP_NAMESPACE}
+  namespace: ${NAMESPACE}
 spec:
   accessModes:
-    - ReadWriteMany
-  storageClassName: ${STORAGE_CLASS_NAME}
+    - ReadWriteOnce
+  storageClassName: do-block-storage
   resources:
     requests:
-      storage: 20Gi
+      storage: 1Gi
