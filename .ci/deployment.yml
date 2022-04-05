@@ -20,16 +20,6 @@ spec:
       labels:
         app: ${APP_NAME}
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-             matchExpressions:
-             - key: app
-               operator: In
-               values:
-               - ${APP_NAME}
-            topologyKey: "kubernetes.io/hostname"
       containers:
       - name: ${APP_NAME}
         image: ghcr.io/ungarelli-it/${APP_NAME}:${BRANCH_NAME}
@@ -56,7 +46,3 @@ spec:
         - name: ${NAMESPACE}-${APP_NAME}
           persistentVolumeClaim:
             claimName: ${APP_NAME}
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
-      imagePullSecrets:
-        - name: dockerimages
